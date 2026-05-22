@@ -1,7 +1,21 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ContactForm from "./components/ContactForm";
+
+export const metadata: Metadata = {
+  title: "akuas — El sistema del agua rural de Chile",
+  description:
+    "Software para Comités de Agua Potable Rural. Facturación mensual, pagos, alertas de consumo y portal del socio. Menos planilla, más comunidad.",
+  alternates: { canonical: "https://akuas.cl" },
+  openGraph: {
+    title: "akuas — El sistema del agua rural de Chile",
+    description: "Software para APR Chile. Menos planilla, más comunidad.",
+    url: "https://akuas.cl",
+    images: [{ url: "/opengraph-image.png", width: 512, height: 512, alt: "akuas" }],
+  },
+};
 
 /* ── Datos ── */
 

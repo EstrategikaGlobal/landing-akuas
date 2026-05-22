@@ -2,9 +2,18 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import CalculadoraMorosidad from "../../components/CalculadoraMorosidad";
 
-export const metadata = {
-  title: "Calculadora de morosidad APR — akuas",
-  description: "Calcula cuánto pierde tu APR por socios morosos. Proyección mensual, anual y a 3 años según número de socios, porcentaje de morosidad y consumo promedio.",
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "Calculadora de morosidad APR",
+  description:
+    "Calcula cuánto pierde tu APR por socios morosos. Proyección mensual, anual y a 3 años según número de socios, porcentaje de morosidad y consumo promedio.",
+  alternates: { canonical: "https://akuas.cl/blog/calculadora-morosidad" },
+  openGraph: {
+    title: "Calculadora de morosidad APR — akuas",
+    description: "¿Cuánto pierde tu APR por morosidad? Proyección mensual, anual y a 3 años con datos reales de Chile.",
+    url: "https://akuas.cl/blog/calculadora-morosidad",
+    images: [{ url: "/opengraph-image.png", width: 512, height: 512, alt: "calculadora morosidad APR" }],
+  },
 };
 
 export default function CalculadoraMorosidadPage() {

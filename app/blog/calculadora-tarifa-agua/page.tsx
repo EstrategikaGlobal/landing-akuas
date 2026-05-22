@@ -2,9 +2,18 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import CalculadoraTarifa from "../../components/CalculadoraTarifa";
 
-export const metadata = {
-  title: "Calculadora de tarifa de agua — akuas",
-  description: "Calcula cuánto debería cobrar tu APR por el consumo mensual de agua. Usa los 6 tramos tarifarios reales con cargo fijo e IVA.",
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "Calculadora de tarifa de agua APR",
+  description:
+    "Calcula cuánto debería cobrar tu APR por el consumo mensual de agua. 6 tramos tarifarios reales con cargo fijo e IVA para socios y no socios.",
+  alternates: { canonical: "https://akuas.cl/blog/calculadora-tarifa-agua" },
+  openGraph: {
+    title: "Calculadora de tarifa de agua — akuas",
+    description: "Herramienta gratuita para APRs: calcula el cobro por consumo de agua con los tramos tarifarios de Chile.",
+    url: "https://akuas.cl/blog/calculadora-tarifa-agua",
+    images: [{ url: "/opengraph-image.png", width: 512, height: 512, alt: "calculadora tarifa agua APR" }],
+  },
 };
 
 export default function CalculadoraTarifaPage() {

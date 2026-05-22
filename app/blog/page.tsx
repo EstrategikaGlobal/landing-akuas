@@ -2,9 +2,18 @@ import Link from "next/link";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
-export const metadata = {
-  title: "Blog y herramientas — akuas",
-  description: "Recursos prácticos para APRs: calculadoras de tarifa y morosidad, test de digitalización y guías de gestión.",
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "Blog y herramientas para APRs",
+  description:
+    "Recursos prácticos para APRs: calculadoras de tarifa y morosidad, test de digitalización y guías de gestión.",
+  alternates: { canonical: "https://akuas.cl/blog" },
+  openGraph: {
+    title: "Blog y herramientas para APRs — akuas",
+    description: "Calculadoras, test de digitalización y guías de gestión para Comités de Agua Potable Rural.",
+    url: "https://akuas.cl/blog",
+    images: [{ url: "/opengraph-image.png", width: 512, height: 512, alt: "akuas blog" }],
+  },
 };
 
 const articulos = [

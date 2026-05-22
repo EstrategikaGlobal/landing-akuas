@@ -2,9 +2,18 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import TestDigitalizacion from "../../components/TestDigitalizacion";
 
-export const metadata = {
-  title: "Test de digitalización para APRs — akuas",
-  description: "8 preguntas para saber si tu APR necesita digitalización. Diagnóstico basado en cómo opera hoy tu comité de agua potable rural.",
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "Test de digitalización para APRs",
+  description:
+    "8 preguntas para saber si tu APR necesita digitalización. Diagnóstico gratuito basado en cómo opera hoy tu comité de agua potable rural.",
+  alternates: { canonical: "https://akuas.cl/blog/test-digitalizacion" },
+  openGraph: {
+    title: "¿Tu APR necesita digitalizarse? — akuas",
+    description: "Test gratuito de 8 preguntas. Descubre en qué nivel de digitalización está tu comité de agua potable rural.",
+    url: "https://akuas.cl/blog/test-digitalizacion",
+    images: [{ url: "/opengraph-image.png", width: 512, height: 512, alt: "test digitalización APR" }],
+  },
 };
 
 export default function TestDigitalizacionPage() {

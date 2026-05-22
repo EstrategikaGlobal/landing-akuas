@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>akuas — monograma · reverso</title>
+  <desc>Sobre cuadrado niebla. Para fondos coloridos o cuando el contexto exige fondo claro.</desc>
+  <rect x="0" y="0" width="200" height="200" rx="36" ry="36" fill="#F2EEE5"></rect>
+  <g fill="none" stroke="#2A6F87" stroke-width="12" stroke-linecap="round">
+    <circle cx="100" cy="100" r="64"></circle>
+    <circle cx="100" cy="100" r="40"></circle>
+  </g>
+  <circle cx="100" cy="100" r="14" fill="#D4A560"></circle>
+</svg>

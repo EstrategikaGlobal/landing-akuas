@@ -2,9 +2,18 @@ import Link from "next/link";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
-export const metadata = {
-  title: "Sobre nosotros — akuas",
-  description: "akuas nació de observar cómo gestionan su APR los comités de agua potable rural en Chile. Construido para que cada comité opere con la misma rigurosidad que una empresa.",
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "Sobre nosotros",
+  description:
+    "akuas nació de observar cómo gestionan su APR los comités de agua potable rural en Chile. Construido para que cada comité opere con la misma rigurosidad que una empresa.",
+  alternates: { canonical: "https://akuas.cl/sobre-nosotros" },
+  openGraph: {
+    title: "Sobre nosotros — akuas",
+    description: "Conoce el equipo y la historia detrás de akuas, el software para APR de Chile.",
+    url: "https://akuas.cl/sobre-nosotros",
+    images: [{ url: "/opengraph-image.png", width: 512, height: 512, alt: "sobre akuas" }],
+  },
 };
 
 const valores = [

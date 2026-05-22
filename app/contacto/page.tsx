@@ -2,9 +2,18 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ContactoForm from "../components/ContactoForm";
 
-export const metadata = {
-  title: "Contacto — akuas",
-  description: "Solicita una demo de akuas o escríbenos por WhatsApp. Respondemos en menos de 24 horas.",
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "Solicitar demo",
+  description:
+    "Solicita una demo de akuas o escríbenos por WhatsApp. Respondemos en menos de 24 horas.",
+  alternates: { canonical: "https://akuas.cl/contacto" },
+  openGraph: {
+    title: "Solicitar demo — akuas",
+    description: "Agenda una demo gratuita de akuas para tu APR. Respondemos en menos de 24 horas.",
+    url: "https://akuas.cl/contacto",
+    images: [{ url: "/opengraph-image.png", width: 512, height: 512, alt: "contacto akuas" }],
+  },
 };
 
 export default function ContactoPage() {

@@ -2,9 +2,18 @@ import Link from "next/link";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
-export const metadata = {
-  title: "Funcionalidades — akuas",
-  description: "Cada módulo de akuas resuelve un problema real de la gestión de APRs: facturación, pagos, alertas, portal del socio, cortes, offline y multi-tenant.",
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "Funcionalidades",
+  description:
+    "Cada módulo de akuas resuelve un problema real de la gestión de APRs: facturación, pagos, alertas, portal del socio, cortes, offline y multi-tenant.",
+  alternates: { canonical: "https://akuas.cl/funcionalidades" },
+  openGraph: {
+    title: "Funcionalidades — akuas",
+    description: "Facturación, pagos, alertas, portal del socio y más. Todo lo que necesita un APR en un solo sistema.",
+    url: "https://akuas.cl/funcionalidades",
+    images: [{ url: "/opengraph-image.png", width: 512, height: 512, alt: "akuas funcionalidades" }],
+  },
 };
 
 const modulos = [
