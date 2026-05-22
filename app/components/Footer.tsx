@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 function AkuasSymbol() {
   return (
     <svg width="28" height="28" viewBox="0 0 48 48" fill="none" aria-hidden>
@@ -11,10 +13,10 @@ function AkuasSymbol() {
 export default function Footer() {
   return (
     <footer style={{ backgroundColor: "var(--tinta)" }}>
-      <div className="max-w-6xl mx-auto px-5 py-12 grid grid-cols-1 sm:grid-cols-3 gap-10">
+      <div className="max-w-6xl mx-auto px-5 py-12 grid grid-cols-1 sm:grid-cols-4 gap-10">
 
         {/* Marca */}
-        <div>
+        <div className="sm:col-span-2">
           <div className="flex items-center gap-2.5 mb-3">
             <AkuasSymbol />
             <span
@@ -35,9 +37,11 @@ export default function Footer() {
               fontFamily: "var(--font-manrope, sans-serif)",
               fontSize: "0.85rem",
               lineHeight: 1.6,
+              maxWidth: "340px",
             }}
           >
-            El sistema del agua rural de Chile.
+            El sistema del agua rural de Chile. Facturación, pagos,
+            alertas de consumo y portal del socio para Comités de Agua Potable Rural.
           </p>
           <p
             style={{
@@ -45,7 +49,7 @@ export default function Footer() {
               fontFamily: "var(--font-bricolage, sans-serif)",
               fontSize: "0.95rem",
               fontStyle: "italic",
-              marginTop: "0.5rem",
+              marginTop: "0.75rem",
             }}
           >
             Menos planilla, más comunidad.
@@ -64,17 +68,17 @@ export default function Footer() {
               marginBottom: "0.875rem",
             }}
           >
-            Navegación
+            Plataforma
           </p>
           <ul className="space-y-2">
             {[
-              { href: "#modulos",    label: "Módulos" },
-              { href: "#para-quien", label: "Para quién" },
-              { href: "#planes",     label: "Planes" },
-              { href: "#contacto",   label: "Contacto" },
+              { href: "/funcionalidades", label: "Funcionalidades" },
+              { href: "/blog",            label: "Blog" },
+              { href: "/sobre-nosotros",  label: "Sobre nosotros" },
+              { href: "/contacto",        label: "Solicitar demo" },
             ].map((l) => (
               <li key={l.href}>
-                <a
+                <Link
                   href={l.href}
                   style={{
                     color: "rgba(242,238,229,0.55)",
@@ -84,7 +88,7 @@ export default function Footer() {
                   className="hover:text-white transition-colors"
                 >
                   {l.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -109,15 +113,28 @@ export default function Footer() {
             style={{
               color: "rgba(242,238,229,0.55)",
               fontFamily: "var(--font-jetbrains, monospace)",
-              fontSize: "0.875rem",
+              fontSize: "0.85rem",
             }}
-            className="hover:text-white transition-colors block mb-1"
+            className="hover:text-white transition-colors block mb-2"
           >
             hola@akuas.cl
           </a>
+          <a
+            href="https://wa.me/56962104488"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              color: "rgba(242,238,229,0.55)",
+              fontFamily: "var(--font-jetbrains, monospace)",
+              fontSize: "0.85rem",
+            }}
+            className="hover:text-white transition-colors block mb-3"
+          >
+            +56 9 6210 4488
+          </a>
           <p
             style={{
-              color: "rgba(242,238,229,0.35)",
+              color: "rgba(242,238,229,0.3)",
               fontFamily: "var(--font-manrope, sans-serif)",
               fontSize: "0.8rem",
             }}

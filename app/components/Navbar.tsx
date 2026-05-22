@@ -1,25 +1,23 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 
-/* Símbolo akuas en SVG — versión reverso (sobre akua) */
 function AkuasSymbol({ size = 32 }: { size?: number }) {
-  const s = size;
-  const cx = s / 2;
-  const stroke = s * 0.06;
   return (
-    <svg width={s} height={s} viewBox="0 0 48 48" fill="none" aria-hidden>
+    <svg width={size} height={size} viewBox="0 0 48 48" fill="none" aria-hidden>
       <circle cx="24" cy="24" r="15.36" stroke="white" strokeWidth="2.88" />
-      <circle cx="24" cy="24" r="9.6"  stroke="white" strokeWidth="2.88" />
-      <circle cx="24" cy="24" r="3.36" fill="#D4A560" />
+      <circle cx="24" cy="24" r="9.6"   stroke="white" strokeWidth="2.88" />
+      <circle cx="24" cy="24" r="3.36"  fill="#D4A560" />
     </svg>
   );
 }
 
 const navLinks = [
-  { href: "#modulos",   label: "Módulos" },
-  { href: "#para-quien", label: "Para quién" },
-  { href: "#planes",    label: "Planes" },
+  { href: "/funcionalidades", label: "Funcionalidades" },
+  { href: "/blog",            label: "Blog" },
+  { href: "/sobre-nosotros",  label: "Sobre nosotros" },
+  { href: "/contacto",        label: "Contacto" },
 ];
 
 export default function Navbar() {
@@ -32,8 +30,8 @@ export default function Navbar() {
     >
       <div className="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
 
-        {/* Logo lockup horizontal */}
-        <a href="/" className="flex items-center gap-3" aria-label="akuas">
+        {/* Logo lockup */}
+        <Link href="/" className="flex items-center gap-3" aria-label="akuas">
           <AkuasSymbol size={32} />
           <span
             style={{
@@ -46,12 +44,12 @@ export default function Navbar() {
           >
             akuas
           </span>
-        </a>
+        </Link>
 
         {/* Nav escritorio */}
         <nav className="hidden md:flex items-center gap-7">
           {navLinks.map((l) => (
-            <a
+            <Link
               key={l.href}
               href={l.href}
               style={{
@@ -63,13 +61,16 @@ export default function Navbar() {
               className="hover:text-white transition-colors"
             >
               {l.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
-        <a href="#contacto" className="hidden md:inline-block btn-outline-niebla text-sm py-2 px-4">
+        <Link
+          href="/contacto"
+          className="hidden md:inline-block btn-outline-niebla text-sm py-2 px-4"
+        >
           Solicitar demo
-        </a>
+        </Link>
 
         {/* Hamburger móvil */}
         <button
@@ -92,8 +93,8 @@ export default function Navbar() {
           style={{ backgroundColor: "var(--akua)", borderTop: "1px solid rgba(242,238,229,0.1)" }}
           className="md:hidden px-5 pb-4 flex flex-col gap-3"
         >
-          {[...navLinks, { href: "#contacto", label: "Solicitar demo" }].map((l) => (
-            <a
+          {[...navLinks, { href: "/contacto", label: "Solicitar demo" }].map((l) => (
+            <Link
               key={l.href}
               href={l.href}
               onClick={() => setOpen(false)}
@@ -101,7 +102,7 @@ export default function Navbar() {
               className="py-1 text-base font-medium"
             >
               {l.label}
-            </a>
+            </Link>
           ))}
         </div>
       )}
