@@ -2,92 +2,107 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ContactForm from "./components/ContactForm";
 
-const features = [
+/* ── Datos de contenido ── */
+
+const modulos = [
   {
-    icon: "📋",
-    title: "Facturación mensual",
-    desc: "Genera cobros automáticos con tarifas por tramos, cargo fijo y costo administrativo. Exención de IVA para socios.",
+    num: "01",
+    titulo: "Facturación mensual",
+    desc: "Tarifa por tramos, cargo fijo y costo administrativo. Exención de IVA para socios. Todo calculado desde la lectura.",
   },
   {
-    icon: "💳",
-    title: "Gestión de pagos",
-    desc: "Registra pagos en efectivo, transferencia u otros medios. Encadenamiento de saldos automático, sin descuadres.",
+    num: "02",
+    titulo: "Gestión de pagos",
+    desc: "Registra pagos y el saldo se encadena automáticamente. Sin descuadres contables.",
   },
   {
-    icon: "🔔",
-    title: "Alertas de consumo",
-    desc: "Detecta automáticamente fugas, consumo cero, sobreconsumo y consumo alto comparando con el promedio de 3 meses.",
+    num: "03",
+    titulo: "Alertas de consumo",
+    desc: "Detecta fugas, consumo cero, sobreconsumo y consumo alto comparando contra el promedio de tres meses.",
   },
   {
-    icon: "👤",
-    title: "Portal del cliente",
-    desc: "Interfaz diseñada para adultos mayores: letra grande, sin tecnicismos. Cada socio ve su saldo, historial y meses pendientes.",
+    num: "04",
+    titulo: "Portal del socio",
+    desc: "Letra grande, lenguaje simple. Cada socio ve cuánto debe, su historial y los meses pendientes.",
   },
   {
-    icon: "📊",
-    title: "Informes y exportación",
-    desc: "Ranking de morosidad, informe financiero consolidado, exportación a Excel y PDF con el logo y colores de tu APR.",
+    num: "05",
+    titulo: "Informes y exportación",
+    desc: "Ranking de morosidad, informe financiero consolidado, Excel y PDF con el logo de tu APR.",
   },
   {
-    icon: "✂️",
-    title: "Cortes de servicio",
-    desc: "Registra cortes y reposiciones con un clic. El estado del servicio se refleja en todos los módulos al instante.",
+    num: "06",
+    titulo: "Cortes de servicio",
+    desc: "Registra un corte o reposición con un clic. El estado se refleja en todos los módulos.",
   },
   {
-    icon: "📱",
-    title: "Modo offline",
-    desc: "Toma lecturas de medidor en terreno sin conexión. Se sincronizan automáticamente al recuperar internet.",
+    num: "07",
+    titulo: "Lecturas offline",
+    desc: "Toma lecturas en terreno sin conexión. Se sincronizan al recuperar internet, sin duplicados.",
   },
   {
-    icon: "🏢",
-    title: "Multi-APR",
-    desc: "Un solo sistema para gestionar varias APRs. Cada organización ve únicamente sus propios datos.",
+    num: "08",
+    titulo: "Multi-APR",
+    desc: "Gestiona varias APRs desde un solo sistema. Cada organización ve únicamente sus propios datos.",
   },
 ];
 
-const plans = [
+const audiencias = [
   {
-    name: "Starter",
-    price: "Gratis",
-    period: "",
-    desc: "Para APRs pequeñas que recién comienzan.",
-    color: "var(--akuas-secondary)",
-    features: [
-      "Hasta 50 clientes",
+    titulo: "Comités de Agua Potable Rural",
+    desc: "Construido para la estructura tarifaria chilena, exenciones de IVA y la nomenclatura que ya usa tu comité.",
+  },
+  {
+    titulo: "Presidentas y tesoreras",
+    desc: "Sin cursos previos. La interfaz guía desde la lectura hasta el cobro en pasos claros.",
+  },
+  {
+    titulo: "Socios rurales",
+    desc: "El portal está diseñado para adultos mayores: texto grande y respuesta inmediata a '¿cuánto debo?'.",
+  },
+  {
+    titulo: "APRs de cualquier tamaño",
+    desc: "Desde diez conexiones hasta varios cientos. La plataforma escala sin cambiar de sistema.",
+  },
+];
+
+const planes = [
+  {
+    nombre: "Starter",
+    precio: "Gratis",
+    desc: "Para APRs que recién comienzan a digitalizar.",
+    items: [
+      "Hasta 50 socios",
       "Facturación y pagos",
-      "Portal del cliente",
+      "Portal del socio",
       "Exportación Excel",
       "Soporte por correo",
     ],
+    destacado: false,
     cta: "Comenzar gratis",
-    highlighted: false,
   },
   {
-    name: "APR",
-    price: "Consultar",
-    period: "",
+    nombre: "APR",
+    precio: "Consultar",
     desc: "La solución completa para APRs en operación.",
-    color: "var(--akuas-primary)",
-    features: [
-      "Clientes ilimitados",
+    items: [
+      "Socios ilimitados",
       "Todo lo de Starter",
       "Alertas de consumo",
       "Cortes de servicio",
-      "Exportación PDF con logo",
-      "Modo offline en terreno",
+      "PDF con logo y colores propios",
+      "Lecturas offline en terreno",
       "Informes consolidados",
       "Soporte prioritario",
     ],
+    destacado: true,
     cta: "Solicitar demo",
-    highlighted: true,
   },
   {
-    name: "Plataforma",
-    price: "Consultar",
-    period: "",
+    nombre: "Plataforma",
+    precio: "Consultar",
     desc: "Para federaciones y redes de APRs.",
-    color: "#7c3aed",
-    features: [
+    items: [
       "Multi-APR ilimitado",
       "Todo lo del plan APR",
       "Dashboard plataforma",
@@ -95,329 +110,414 @@ const plans = [
       "Onboarding incluido",
       "SLA garantizado",
     ],
+    destacado: false,
     cta: "Contactar",
-    highlighted: false,
   },
 ];
 
-const audiences = [
-  {
-    icon: "🏘️",
-    title: "Comités de Agua Potable Rural",
-    desc: "Creado específicamente para APRs chilenas. Cumple con la estructura tarifaria, exenciones de IVA y nomenclatura de la SUBDERE.",
-  },
-  {
-    icon: "👩‍💼",
-    title: "Administradores y tesoreros",
-    desc: "Sin necesidad de conocimientos contables avanzados. La interfaz guía paso a paso desde la lectura hasta el cobro.",
-  },
-  {
-    icon: "👴",
-    title: "Socios rurales",
-    desc: "El portal del cliente está diseñado pensando en adultos mayores: texto grande, lenguaje simple y respuesta inmediata a '¿cuánto debo?'.",
-  },
-  {
-    icon: "🌿",
-    title: "APRs de cualquier tamaño",
-    desc: "Desde 10 conexiones hasta varios cientos. La plataforma escala sin cambiar de sistema ni perder historial.",
-  },
-];
+/* ── Componente principal ── */
 
 export default function Home() {
   return (
     <>
       <Navbar />
 
-      {/* ── HERO ── */}
+      {/* ══ HERO ══ */}
       <section
-        style={{
-          background:
-            "linear-gradient(135deg, var(--akuas-primary) 0%, #1a6a96 60%, var(--akuas-secondary) 100%)",
-        }}
-        className="relative pt-32 pb-24 px-4 text-white overflow-hidden"
+        style={{ backgroundColor: "var(--akua)" }}
+        className="relative pt-32 pb-24 px-5 overflow-hidden"
       >
+        {/* Patrón sutil — anillos concéntricos al 6% */}
         <div
-          className="absolute inset-0 opacity-10 pointer-events-none"
+          aria-hidden
+          className="absolute inset-0 pointer-events-none"
           style={{
-            backgroundImage:
-              "radial-gradient(circle at 20% 50%, white 1px, transparent 1px), radial-gradient(circle at 80% 20%, white 1px, transparent 1px)",
-            backgroundSize: "40px 40px",
+            backgroundImage: `radial-gradient(circle, rgba(242,238,229,0.18) 1px, transparent 1px),
+                              radial-gradient(circle, rgba(242,238,229,0.08) 8px, transparent 8px),
+                              radial-gradient(circle, rgba(242,238,229,0.04) 16px, transparent 16px)`,
+            backgroundSize: "80px 80px",
+            backgroundPosition: "center",
           }}
         />
+
         <div className="max-w-4xl mx-auto text-center relative">
-          <span
-            style={{ backgroundColor: "var(--akuas-secondary)" }}
-            className="inline-block text-white text-sm font-semibold px-4 py-1 rounded-full mb-6"
+          <p className="label-section mb-5">El sistema del agua rural de Chile</p>
+
+          <h1
+            style={{
+              fontFamily: "var(--font-bricolage, sans-serif)",
+              color: "var(--niebla)",
+              fontWeight: 500,
+              letterSpacing: "-0.04em",
+              lineHeight: 1.1,
+            }}
+            className="text-5xl sm:text-6xl md:text-7xl mb-6"
           >
-            Plataforma para APRs chilenas
-          </span>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-6">
-            Gestiona tu APR
-            <br />
-            <span style={{ color: "#9ae87a" }}>sin complicaciones</span>
+            Menos planilla,<br />
+            <em style={{ color: "var(--ocre)", fontStyle: "italic" }}>más comunidad.</em>
           </h1>
-          <p className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto mb-10 leading-relaxed">
-            AKUAS es el sistema integral para Comités de Agua Potable Rural. Facturación, cobros,
-            alertas de consumo y portal del cliente — todo en una sola plataforma, sin papeles.
+
+          <p
+            style={{
+              color: "rgba(242,238,229,0.8)",
+              fontFamily: "var(--font-manrope, sans-serif)",
+              fontSize: "1.125rem",
+              lineHeight: 1.6,
+            }}
+            className="max-w-2xl mx-auto mb-10"
+          >
+            Su comité no aprende software. Lo operamos juntas. Facturación, cobros,
+            alertas de consumo y portal del socio — todo en una sola plataforma.
           </p>
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="#contacto"
-              className="btn-primary text-base py-3 px-8"
-              style={{ backgroundColor: "white", color: "var(--akuas-primary)" }}
-            >
+            <a href="#contacto" className="btn-niebla text-base py-3 px-8">
               Solicitar demo gratis
             </a>
-            <a href="#caracteristicas" className="btn-outline-white text-base py-3 px-8">
-              Ver características
+            <a href="#modulos" className="btn-outline-niebla text-base py-3 px-8">
+              Ver módulos
             </a>
           </div>
-          <p className="mt-6 text-white/60 text-sm">Sin tarjeta de crédito. Sin letra chica.</p>
+          <p
+            style={{ color: "rgba(242,238,229,0.45)", fontFamily: "var(--font-manrope, sans-serif)" }}
+            className="mt-5 text-sm"
+          >
+            Sin tarjeta de crédito. Sin letra chica.
+          </p>
         </div>
 
-        <div className="max-w-3xl mx-auto mt-16 grid grid-cols-3 gap-4 relative">
+        {/* Stats */}
+        <div className="max-w-2xl mx-auto mt-16 grid grid-cols-3 gap-3 relative">
           {[
-            { value: "100+", label: "APRs activas" },
-            { value: "0 pesos", label: "Para comenzar" },
-            { value: "24/7", label: "Portal del cliente" },
-          ].map((stat) => (
+            { valor: "100+", etiqueta: "APRs activas" },
+            { valor: "Gratis", etiqueta: "Para comenzar" },
+            { valor: "24/7", etiqueta: "Portal del socio" },
+          ].map((s) => (
             <div
-              key={stat.label}
-              className="text-center bg-white/10 backdrop-blur rounded-xl py-4 px-2"
+              key={s.etiqueta}
+              className="text-center rounded-xl py-4 px-2"
+              style={{ backgroundColor: "rgba(242,238,229,0.08)" }}
             >
-              <p className="text-2xl sm:text-3xl font-bold text-white">{stat.value}</p>
-              <p className="text-white/70 text-sm mt-1">{stat.label}</p>
+              <p
+                style={{
+                  color: "var(--niebla)",
+                  fontFamily: "var(--font-bricolage, sans-serif)",
+                  fontWeight: 500,
+                }}
+                className="text-2xl sm:text-3xl"
+              >
+                {s.valor}
+              </p>
+              <p
+                style={{ color: "rgba(242,238,229,0.6)", fontFamily: "var(--font-manrope, sans-serif)" }}
+                className="text-xs mt-1"
+              >
+                {s.etiqueta}
+              </p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* ── CARACTERÍSTICAS ── */}
-      <section
-        id="caracteristicas"
-        className="py-20 px-4"
-        style={{ backgroundColor: "var(--akuas-surface)" }}
-      >
+      {/* ══ MÓDULOS ══ */}
+      <section id="modulos" style={{ backgroundColor: "var(--niebla)" }} className="py-20 px-5">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-14">
-            <span
-              style={{ color: "var(--akuas-secondary)", fontWeight: 600 }}
-              className="text-sm uppercase tracking-widest"
-            >
-              Módulos
-            </span>
+          <div className="mb-12">
+            <p className="label-section mb-3">Módulos</p>
             <h2
-              style={{ color: "var(--akuas-primary)" }}
-              className="text-3xl sm:text-4xl font-bold mt-2 mb-4"
+              style={{
+                fontFamily: "var(--font-bricolage, sans-serif)",
+                color: "var(--tinta)",
+                fontWeight: 500,
+                letterSpacing: "-0.025em",
+              }}
+              className="text-3xl sm:text-4xl max-w-xl"
             >
-              Todo lo que necesita tu APR
+              Construido desde adentro de un APR.
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto text-base leading-relaxed">
-              Cada módulo fue diseñado junto a administradores de APRs reales para resolver los
-              problemas del día a día, no los de un texto universitario.
+            <p
+              style={{ color: "rgba(26,31,41,0.6)", fontFamily: "var(--font-manrope, sans-serif)" }}
+              className="mt-4 text-base max-w-lg leading-relaxed"
+            >
+              Cada módulo resuelve un problema real de la gestión diaria — no un caso
+              de estudio universitario.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {features.map((f) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {modulos.map((m) => (
               <div
-                key={f.title}
-                className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow border border-gray-100"
+                key={m.num}
+                className="rounded-2xl p-6 flex flex-col gap-3"
+                style={{ backgroundColor: "white", border: "1px solid rgba(26,31,41,0.07)" }}
               >
-                <div className="text-3xl mb-4">{f.icon}</div>
+                <span
+                  style={{
+                    fontFamily: "var(--font-jetbrains, monospace)",
+                    fontSize: "0.7rem",
+                    color: "var(--ocre)",
+                    letterSpacing: "0.1em",
+                  }}
+                >
+                  {m.num}
+                </span>
                 <h3
-                  className="font-bold text-base mb-2"
-                  style={{ color: "var(--akuas-primary)" }}
+                  style={{
+                    fontFamily: "var(--font-bricolage, sans-serif)",
+                    color: "var(--akua)",
+                    fontWeight: 500,
+                    fontSize: "1rem",
+                  }}
                 >
-                  {f.title}
+                  {m.titulo}
                 </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{f.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── PARA QUIÉN ES ── */}
-      <section id="para-quien" className="py-20 px-4 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-14">
-            <span
-              style={{ color: "var(--akuas-secondary)", fontWeight: 600 }}
-              className="text-sm uppercase tracking-widest"
-            >
-              Para quién
-            </span>
-            <h2
-              style={{ color: "var(--akuas-primary)" }}
-              className="text-3xl sm:text-4xl font-bold mt-2 mb-4"
-            >
-              Hecho para la realidad rural chilena
-            </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto text-base leading-relaxed">
-              No somos un sistema genérico adaptado. AKUAS nació para APRs y conoce sus
-              particularidades: tarifas por tramos, socios exentos de IVA, lecturas en terreno y
-              socios que preguntan por WhatsApp.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-            {audiences.map((a) => (
-              <div
-                key={a.title}
-                className="flex gap-5 items-start p-6 rounded-2xl border border-gray-100 hover:border-blue-100 hover:bg-blue-50/30 transition-colors"
-              >
-                <div
-                  className="text-3xl w-14 h-14 flex items-center justify-center rounded-xl shrink-0"
-                  style={{ backgroundColor: "var(--akuas-surface)" }}
+                <p
+                  style={{
+                    color: "rgba(26,31,41,0.65)",
+                    fontFamily: "var(--font-manrope, sans-serif)",
+                    fontSize: "0.875rem",
+                    lineHeight: 1.55,
+                  }}
                 >
-                  {a.icon}
-                </div>
-                <div>
-                  <h3
-                    className="font-bold text-lg mb-1"
-                    style={{ color: "var(--akuas-primary)" }}
-                  >
-                    {a.title}
-                  </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{a.desc}</p>
-                </div>
+                  {m.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ══ PARA QUIÉN ══ */}
+      <section
+        id="para-quien"
+        className="py-20 px-5"
+        style={{ backgroundColor: "white" }}
+      >
+        <div className="max-w-6xl mx-auto">
+          <div className="mb-12">
+            <p className="label-section mb-3">Para quién</p>
+            <h2
+              style={{
+                fontFamily: "var(--font-bricolage, sans-serif)",
+                color: "var(--tinta)",
+                fontWeight: 500,
+                letterSpacing: "-0.025em",
+              }}
+              className="text-3xl sm:text-4xl max-w-xl"
+            >
+              Hecho para la realidad rural chilena.
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            {audiencias.map((a) => (
+              <div
+                key={a.titulo}
+                className="rounded-2xl p-7"
+                style={{
+                  backgroundColor: "var(--niebla)",
+                  border: "1px solid rgba(42,111,135,0.1)",
+                }}
+              >
+                <h3
+                  style={{
+                    fontFamily: "var(--font-bricolage, sans-serif)",
+                    color: "var(--akua)",
+                    fontWeight: 500,
+                    fontSize: "1.125rem",
+                    marginBottom: "0.5rem",
+                  }}
+                >
+                  {a.titulo}
+                </h3>
+                <p
+                  style={{
+                    color: "rgba(26,31,41,0.7)",
+                    fontFamily: "var(--font-manrope, sans-serif)",
+                    fontSize: "0.9rem",
+                    lineHeight: 1.6,
+                  }}
+                >
+                  {a.desc}
+                </p>
               </div>
             ))}
           </div>
 
+          {/* Highlight offline */}
           <div
-            className="mt-12 rounded-2xl p-8 text-white text-center"
-            style={{
-              background:
-                "linear-gradient(135deg, var(--akuas-primary), var(--akuas-secondary))",
-            }}
+            className="mt-8 rounded-2xl p-8"
+            style={{ backgroundColor: "var(--akua)" }}
           >
-            <h3 className="text-2xl font-bold mb-3">¿Tu APR no tiene computador?</h3>
-            <p className="text-white/85 max-w-xl mx-auto text-base leading-relaxed">
-              AKUAS funciona desde cualquier teléfono o tablet. Las lecturas de medidor se pueden
-              registrar offline en terreno y se sincronizan cuando haya conexión.
+            <p
+              style={{
+                fontFamily: "var(--font-bricolage, sans-serif)",
+                color: "var(--niebla)",
+                fontWeight: 500,
+                fontSize: "1.35rem",
+                letterSpacing: "-0.02em",
+                marginBottom: "0.5rem",
+              }}
+            >
+              ¿Tu APR trabaja en zona sin señal?
+            </p>
+            <p
+              style={{
+                color: "rgba(242,238,229,0.8)",
+                fontFamily: "var(--font-manrope, sans-serif)",
+                fontSize: "0.95rem",
+                lineHeight: 1.6,
+                maxWidth: "560px",
+              }}
+            >
+              akuas funciona desde cualquier celular o tablet. Las lecturas de medidor
+              se registran offline en terreno y se sincronizan cuando hay conexión.
             </p>
           </div>
         </div>
       </section>
 
-      {/* ── PRECIOS ── */}
-      <section
-        id="precios"
-        className="py-20 px-4"
-        style={{ backgroundColor: "var(--akuas-surface)" }}
-      >
+      {/* ══ PLANES ══ */}
+      <section id="planes" style={{ backgroundColor: "var(--niebla)" }} className="py-20 px-5">
         <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-14">
-            <span
-              style={{ color: "var(--akuas-secondary)", fontWeight: 600 }}
-              className="text-sm uppercase tracking-widest"
-            >
-              Planes
-            </span>
+          <div className="mb-12">
+            <p className="label-section mb-3">Planes</p>
             <h2
-              style={{ color: "var(--akuas-primary)" }}
-              className="text-3xl sm:text-4xl font-bold mt-2 mb-4"
+              style={{
+                fontFamily: "var(--font-bricolage, sans-serif)",
+                color: "var(--tinta)",
+                fontWeight: 500,
+                letterSpacing: "-0.025em",
+              }}
+              className="text-3xl sm:text-4xl"
             >
-              Elige el plan para tu APR
-            </h2>
-            <p className="text-gray-600 max-w-xl mx-auto text-base">
               Comienza gratis. Escala cuando lo necesites.
-            </p>
+            </h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 items-stretch">
-            {plans.map((plan) => (
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 items-start">
+            {planes.map((p) => (
               <div
-                key={plan.name}
-                className={`rounded-2xl flex flex-col ${
-                  plan.highlighted
-                    ? "shadow-xl scale-105"
-                    : "bg-white shadow-sm border border-gray-100"
-                }`}
+                key={p.nombre}
+                className={`rounded-2xl flex flex-col ${p.destacado ? "sm:-mt-4" : ""}`}
                 style={
-                  plan.highlighted
-                    ? { backgroundColor: "var(--akuas-primary)" }
-                    : {}
+                  p.destacado
+                    ? { backgroundColor: "var(--akua)", boxShadow: "0 8px 32px rgba(42,111,135,0.25)" }
+                    : { backgroundColor: "white", border: "1px solid rgba(26,31,41,0.08)" }
                 }
               >
-                {plan.highlighted && (
+                {p.destacado && (
                   <div
-                    className="text-center text-xs font-bold py-2 rounded-t-2xl"
-                    style={{ backgroundColor: "var(--akuas-secondary)", color: "white" }}
+                    className="text-center text-xs font-semibold py-2 rounded-t-2xl"
+                    style={{
+                      backgroundColor: "var(--ocre)",
+                      color: "var(--tinta)",
+                      fontFamily: "var(--font-jetbrains, monospace)",
+                      letterSpacing: "0.08em",
+                    }}
                   >
                     MAS POPULAR
                   </div>
                 )}
                 <div className="p-7 flex flex-col flex-1">
                   <p
-                    className={`font-bold text-sm uppercase tracking-widest mb-1 ${
-                      plan.highlighted ? "text-white/70" : "text-gray-500"
-                    }`}
+                    style={{
+                      fontFamily: "var(--font-jetbrains, monospace)",
+                      fontSize: "0.7rem",
+                      letterSpacing: "0.1em",
+                      textTransform: "uppercase" as const,
+                      color: p.destacado ? "rgba(242,238,229,0.6)" : "var(--ocre)",
+                      marginBottom: "0.5rem",
+                    }}
                   >
-                    {plan.name}
+                    {p.nombre}
                   </p>
                   <p
-                    className={`text-4xl font-bold mb-1 ${plan.highlighted ? "text-white" : ""}`}
-                    style={!plan.highlighted ? { color: plan.color } : {}}
+                    style={{
+                      fontFamily: "var(--font-bricolage, sans-serif)",
+                      fontSize: "2.5rem",
+                      fontWeight: 500,
+                      color: p.destacado ? "var(--niebla)" : "var(--akua)",
+                      letterSpacing: "-0.03em",
+                      lineHeight: 1,
+                      marginBottom: "0.5rem",
+                    }}
                   >
-                    {plan.price}
+                    {p.precio}
                   </p>
                   <p
-                    className={`text-sm mb-6 ${
-                      plan.highlighted ? "text-white/80" : "text-gray-500"
-                    }`}
+                    style={{
+                      color: p.destacado ? "rgba(242,238,229,0.7)" : "rgba(26,31,41,0.55)",
+                      fontFamily: "var(--font-manrope, sans-serif)",
+                      fontSize: "0.875rem",
+                      marginBottom: "1.5rem",
+                    }}
                   >
-                    {plan.desc}
+                    {p.desc}
                   </p>
 
-                  <ul className="space-y-3 mb-8 flex-1">
-                    {plan.features.map((feat) => (
+                  <ul className="space-y-2.5 mb-8 flex-1">
+                    {p.items.map((item) => (
                       <li
-                        key={feat}
-                        className={`flex items-start gap-2 text-sm ${
-                          plan.highlighted ? "text-white/90" : "text-gray-700"
-                        }`}
+                        key={item}
+                        className="flex items-start gap-2.5"
+                        style={{
+                          color: p.destacado ? "rgba(242,238,229,0.9)" : "rgba(26,31,41,0.75)",
+                          fontFamily: "var(--font-manrope, sans-serif)",
+                          fontSize: "0.875rem",
+                        }}
                       >
                         <span
-                          className="mt-0.5 shrink-0 text-base"
                           style={{
-                            color: plan.highlighted ? "#9ae87a" : "var(--akuas-secondary)",
+                            color: p.destacado ? "var(--ocre)" : "var(--brote)",
+                            marginTop: "2px",
+                            flexShrink: 0,
                           }}
                         >
                           ✓
                         </span>
-                        {feat}
+                        {item}
                       </li>
                     ))}
                   </ul>
 
                   <a
                     href="#contacto"
-                    className={`text-center py-3 px-6 rounded-xl font-semibold text-sm transition-all block ${
-                      plan.highlighted ? "hover:opacity-90" : "border-2"
-                    }`}
+                    className="text-center py-3 px-6 rounded-xl font-semibold text-sm block transition-opacity hover:opacity-85"
                     style={
-                      plan.highlighted
-                        ? { backgroundColor: "white", color: "var(--akuas-primary)" }
-                        : { borderColor: plan.color, color: plan.color }
+                      p.destacado
+                        ? {
+                            backgroundColor: "var(--niebla)",
+                            color: "var(--akua)",
+                            fontFamily: "var(--font-manrope, sans-serif)",
+                          }
+                        : {
+                            backgroundColor: "var(--akua)",
+                            color: "var(--niebla)",
+                            fontFamily: "var(--font-manrope, sans-serif)",
+                          }
                     }
                   >
-                    {plan.cta}
+                    {p.cta}
                   </a>
                 </div>
               </div>
             ))}
           </div>
 
-          <p className="text-center text-gray-500 text-sm mt-8">
-            Los precios del plan APR y Plataforma se definen según el número de conexiones y
-            necesidades de cada organización.{" "}
+          <p
+            style={{
+              color: "rgba(26,31,41,0.5)",
+              fontFamily: "var(--font-manrope, sans-serif)",
+              fontSize: "0.875rem",
+            }}
+            className="text-center mt-7"
+          >
+            Los planes APR y Plataforma se definen según el número de conexiones.{" "}
             <a
               href="#contacto"
-              style={{ color: "var(--akuas-primary)" }}
-              className="font-medium hover:underline"
+              style={{ color: "var(--akua)", fontWeight: 600 }}
+              className="hover:underline"
             >
               Conversemos.
             </a>
@@ -425,22 +525,38 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── CONTACTO / CTA FINAL ── */}
+      {/* ══ CONTACTO ══ */}
       <section
         id="contacto"
-        style={{
-          background:
-            "linear-gradient(135deg, var(--akuas-primary) 0%, #1a6a96 100%)",
-        }}
-        className="py-20 px-4 text-white"
+        style={{ backgroundColor: "var(--akua)" }}
+        className="py-20 px-5"
       >
-        <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">Solicita una demo gratuita</h2>
-          <p className="text-white/80 mb-10 text-base leading-relaxed">
-            Te mostramos el sistema con los datos reales de tu APR en una videollamada de 30
-            minutos. Sin compromiso.
-          </p>
-
+        <div className="max-w-2xl mx-auto">
+          <div className="text-center mb-10">
+            <p className="label-section mb-3">Contacto</p>
+            <h2
+              style={{
+                fontFamily: "var(--font-bricolage, sans-serif)",
+                color: "var(--niebla)",
+                fontWeight: 500,
+                letterSpacing: "-0.03em",
+              }}
+              className="text-3xl sm:text-4xl mb-3"
+            >
+              Solicita una demo gratuita.
+            </h2>
+            <p
+              style={{
+                color: "rgba(242,238,229,0.75)",
+                fontFamily: "var(--font-manrope, sans-serif)",
+                fontSize: "1rem",
+                lineHeight: 1.6,
+              }}
+            >
+              Mostramos el sistema con los datos reales de tu APR en
+              una videollamada de 30 minutos. Sin compromiso.
+            </p>
+          </div>
           <ContactForm />
         </div>
       </section>

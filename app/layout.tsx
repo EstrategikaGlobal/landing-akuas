@@ -1,25 +1,33 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Bricolage_Grotesque, Manrope, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const bricolage = Bricolage_Grotesque({
+  variable: "--font-bricolage",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "700"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const manrope = Manrope({
+  variable: "--font-manrope",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
+const jetbrains = JetBrains_Mono({
+  variable: "--font-jetbrains",
+  subsets: ["latin"],
+  weight: ["400", "500"],
 });
 
 export const metadata: Metadata = {
-  title: "AKUAS — Plataforma de Gestión para APRs",
+  title: "akuas — El sistema del agua rural de Chile",
   description:
-    "Sistema integral para Comités de Agua Potable Rural. Facturación, pagos, alertas de consumo y portal de clientes en una sola plataforma.",
-  keywords: ["APR", "agua potable rural", "gestión APR", "facturación agua", "comité de agua"],
+    "Sistema integral para Comités de Agua Potable Rural. Facturación, pagos, alertas de consumo y portal de socios. Menos planilla, más comunidad.",
+  keywords: ["APR", "agua potable rural", "gestion APR", "facturacion agua", "comite de agua"],
   openGraph: {
-    title: "AKUAS — Plataforma de Gestión para APRs",
-    description: "Sistema integral para Comités de Agua Potable Rural.",
+    title: "akuas — El sistema del agua rural de Chile",
+    description: "Menos planilla. Mas comunidad.",
     locale: "es_CL",
     type: "website",
   },
@@ -31,7 +39,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
+    <html
+      lang="es"
+      className={`${bricolage.variable} ${manrope.variable} ${jetbrains.variable} h-full`}
+    >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );
