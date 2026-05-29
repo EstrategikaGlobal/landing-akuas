@@ -317,7 +317,7 @@ section.problema { background: var(--paper-2); color: var(--ink); padding: 116px
 .prob-card p { margin: 0; font-size: 16.5px; line-height: 1.5; color: var(--ink-2); }
 .prob-card .quote { margin-top: auto; padding: 16px 18px; background: var(--paper-2); border-left: 3px solid var(--ocre); border-radius: 0 10px 10px 0; font-family: var(--serif); font-style: italic; font-weight: 400; font-size: 15.5px; line-height: 1.4; color: var(--ink-2); transition: border-left-width 0.28s ease, padding-left 0.28s ease, color 0.28s ease; }
 .prob-card:hover .quote { border-left-width: 5px; padding-left: 20px; color: var(--ink); }
-.prob-foot { margin-top: 56px; padding-top: 36px; border-top: 1px solid var(--line); display: flex; align-items: baseline; gap: 28px; flex-wrap: wrap; }
+.prob-foot { margin-top: 56px; padding-top: 36px; border-top: 1px solid var(--line); display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
 .prob-foot .big { font-family: var(--serif); font-weight: 500; font-size: clamp(48px, 6vw, 76px); line-height: 0.9; letter-spacing: -0.035em; color: var(--aqua); }
 .prob-foot .big small { font-size: 0.42em; color: var(--ocre); font-weight: 500; }
 .prob-foot .txt { font-family: var(--serif); font-weight: 300; font-size: clamp(19px, 2vw, 26px); line-height: 1.3; color: var(--ink-2); max-width: 30ch; text-wrap: pretty; }
