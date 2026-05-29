@@ -913,14 +913,14 @@ export function HomeClient() {
           <div className="cta-inner">
             <span className="kicker">Demos sin compromiso</span>
             <h2>Hablemos del agua de <em>tu comité.</em></h2>
-            <p className="csub">Una demo corta, por videollamada o presencial. Vemos si akuas le sirve a tu comité — sin presión.</p>
+            <p className="csub">Una demo corta, por videollamada o presencial. Vemos si akuas le sirve a tu comité.</p>
             <div className="cta-buttons">
               <a href="https://wa.me/56942657280" className="btn primary lg" target="_blank" rel="noopener"><span className="btn-arrow">Agendar una demo</span></a>
               <a href="https://wa.me/56942657280" className="btn ghost-light lg" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
             </div>
             <div className="cta-reassure">
               <span>Sin compromiso</span>
-              <span>Migramos tus datos gratis</span>
+              <span>Migramos tus datos</span>
               <span>Soporte siempre incluido</span>
             </div>
           </div>
