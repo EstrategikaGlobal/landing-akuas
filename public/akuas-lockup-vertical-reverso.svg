@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 400" width="420" height="400">
+  <title>akuas — lockup vertical · reverso</title>
+  <desc>Para tarjetas oscuras. Monograma blanco arriba, wordmark blanco con k ocre.</desc>
+  <rect x="130" y="20" width="160" height="160" rx="30" ry="30" fill="#F2EEE5"></rect>
+  <g fill="none" stroke="#2A6F87" stroke-width="10" stroke-linecap="round">
+    <circle cx="210" cy="100" r="52"></circle>
+    <circle cx="210" cy="100" r="32"></circle>
+  </g>
+  <circle cx="210" cy="100" r="11" fill="#D4A560"></circle>
+  <text x="210" y="320" text-anchor="middle" font-family="&#39;Bricolage Grotesque&#39;, &#39;Helvetica Neue&#39;, system-ui, sans-serif" font-weight="500" font-size="140" fill="#F2EEE5" letter-spacing="-8.4">a<tspan font-style="italic" font-weight="600" fill="#D4A560">k</tspan>uas</text>
+</svg>

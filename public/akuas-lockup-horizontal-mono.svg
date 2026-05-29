@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 200" width="720" height="200" fill="#1A1F29">
+  <title>akuas — lockup horizontal · monocromo</title>
+  <desc>Una tinta. Para fax, bordado, bajo relieve, grabado láser.</desc>
+  
+  <g fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="round">
+    <circle cx="100" cy="100" r="64"></circle>
+    <circle cx="100" cy="100" r="40"></circle>
+  </g>
+  <circle cx="100" cy="100" r="14" fill="currentColor"></circle>
+  
+  <text x="240" y="145" font-family="&#39;Bricolage Grotesque&#39;, &#39;Helvetica Neue&#39;, system-ui, sans-serif" font-weight="500" font-size="180" fill="currentColor" letter-spacing="-10.8">a<tspan font-style="italic" font-weight="600">k</tspan>uas</text>
+</svg>

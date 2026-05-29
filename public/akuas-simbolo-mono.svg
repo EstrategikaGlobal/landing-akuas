@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100" fill="#1A1F29">
+  <title>akuas — símbolo · monocromo</title>
+  <desc>Una tinta. Color heredado del atributo fill del SVG (por defecto tinta).</desc>
+  <g fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round">
+    <circle cx="50" cy="50" r="32"></circle>
+    <circle cx="50" cy="50" r="20"></circle>
+  </g>
+  <circle cx="50" cy="50" r="7" fill="currentColor"></circle>
+</svg>
