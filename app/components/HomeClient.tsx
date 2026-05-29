@@ -516,16 +516,16 @@ export function HomeClient() {
       <section className="hero">
         <div className="carousel" id="carousel">
           <div className="slide active" data-caption="Todo el sistema, sobre tu territorio">
-            <img src="/Inicio.png" alt="Vista aérea de un valle rural con la red de agua" />
+            <img src="/inicio.png" alt="Vista aérea de un valle rural con la red de agua" />
           </div>
           <div className="slide" data-caption="Lecturas en terreno, desde el celular">
-            <img src="/Inicio3.png" alt="Operario de un APR revisando datos en una tablet junto a un pozo" />
+            <img src="/inicio3.png" alt="Operario de un APR revisando datos en una tablet junto a un pozo" />
           </div>
           <div className="slide" data-caption="La boleta, clara y a la mano">
             <img src="/Inicio4.png" alt="Manos de una persona mayor con la boleta en papel y la app en el celular" />
           </div>
           <div className="slide" data-caption="Tu panel, en cualquier pantalla">
-            <img src="/Inicio2.png" alt="El panel de akuas en un computador y una tablet" />
+            <img src="/inicio2.png" alt="El panel de akuas en un computador y una tablet" />
           </div>
         </div>
 
