@@ -176,22 +176,29 @@ section.split { background: var(--paper-2); color: var(--ink); padding: 116px 0 
 /* chaos (left) */
 .chaos { display: flex; flex-direction: column; padding-top: 4px; }
 .chaos .sp-item:nth-child(1) { align-self: flex-start; margin-left: 2%; z-index: 3; }
-.chaos .sp-item:nth-child(2) { align-self: flex-end; margin-top: -14px; margin-right: 0; z-index: 2; }
-.chaos .sp-item:nth-child(3) { align-self: flex-start; margin-top: -6px; margin-left: 10%; z-index: 6; }
-.chaos .sp-item:nth-child(4) { align-self: flex-end; margin-top: -20px; margin-right: 12%; z-index: 5; }
-.chaos .sp-item:nth-child(5) { align-self: flex-start; margin-top: -16px; margin-left: 32%; z-index: 7; }
+.chaos .sp-item:nth-child(2) { align-self: flex-end; margin-top: -22px; margin-right: 0; z-index: 2; }
+.chaos .sp-item:nth-child(3) { align-self: flex-start; margin-top: -20px; margin-left: 8%; z-index: 6; }
+.chaos .sp-item:nth-child(4) { align-self: flex-end; margin-top: -28px; margin-right: 6%; z-index: 5; }
+.chaos .sp-item:nth-child(5) { align-self: flex-start; margin-top: -22px; margin-left: 28%; z-index: 7; }
+.chaos .sp-item:nth-child(6) { align-self: flex-end; margin-top: -30px; margin-right: 18%; z-index: 8; }
+.chaos .sp-item:nth-child(7) { align-self: flex-start; margin-top: -18px; margin-left: 42%; z-index: 9; }
 .chaos-card { background: var(--paper); border: 1px solid oklch(0.83 0.008 255); border-radius: 12px; box-shadow: 0 16px 28px -18px rgba(0,0,0,0.32); }
-.chaos-card.note { padding: 15px 17px; width: 234px; transform: rotate(-6deg); }
-.chaos-card.xls { padding: 12px; width: 220px; transform: rotate(4deg); }
-.chaos-card.sticky { width: 150px; min-height: 118px; padding: 14px 15px; transform: rotate(6deg); background: oklch(0.92 0.10 95); border-color: oklch(0.83 0.10 95); box-shadow: 0 14px 26px -16px rgba(0,0,0,0.3); display: flex; align-items: center; }
-.chaos-card.receipt { width: 158px; padding: 12px 14px; transform: rotate(-4deg); }
+.chaos-card.note { padding: 15px 17px; width: 234px; transform: rotate(-11deg); }
+.chaos-card.xls { padding: 12px; width: 220px; transform: rotate(9deg); }
+.chaos-card.sticky { width: 150px; min-height: 118px; padding: 14px 15px; transform: rotate(12deg); background: oklch(0.92 0.10 95); border-color: oklch(0.83 0.10 95); box-shadow: 0 14px 26px -16px rgba(0,0,0,0.3); display: flex; align-items: center; }
+.chaos-card.receipt { width: 158px; padding: 12px 14px; transform: rotate(-9deg); }
+.chaos-card.cuaderno { width: 178px; padding: 13px 14px; transform: rotate(5deg); background: oklch(0.99 0.004 95); border-color: oklch(0.86 0.008 95); box-shadow: 0 14px 26px -16px rgba(0,0,0,0.28); }
+.chaos-card.nota2 { width: 128px; min-height: 96px; padding: 12px 13px; transform: rotate(-14deg); background: oklch(0.88 0.08 270); border-color: oklch(0.78 0.08 270); box-shadow: 0 12px 22px -14px rgba(0,0,0,0.3); display: flex; align-items: center; }
 .chaos-card .hd { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 9px; display: flex; align-items: center; gap: 7px; }
 .chaos-card .hd::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--ocre); }
 .note .scrawl { font-family: var(--serif); font-style: italic; font-size: 19px; line-height: 1.3; color: var(--ink-2); letter-spacing: -0.01em; }
 .note .scrawl s { color: oklch(0.6 0.14 25); text-decoration-thickness: 2px; }
 .sticky .scrawl2 { font-family: var(--serif); font-style: italic; font-size: 17px; line-height: 1.25; color: oklch(0.42 0.07 60); }
+.nota2 .scrawl3 { font-family: var(--serif); font-style: italic; font-size: 15px; line-height: 1.25; color: oklch(0.28 0.06 270); }
 .receipt .lines { font-family: var(--mono); font-size: 10px; color: var(--muted); line-height: 1.7; }
 .receipt .lines .big { font-size: 14px; color: var(--ink-2); }
+.cuaderno .lines2 { font-family: var(--mono); font-size: 10px; color: var(--ink-2); line-height: 1.85; }
+.cuaderno .lines2 s { color: oklch(0.55 0.15 25); text-decoration-thickness: 1.5px; }
 .xls .grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; border: 1px solid oklch(0.8 0.01 255); border-radius: 4px; overflow: hidden; font-family: var(--mono); font-size: 10px; }
 .xls .grid div { padding: 5px 7px; border-right: 1px solid oklch(0.86 0.008 255); border-top: 1px solid oklch(0.86 0.008 255); color: var(--ink-2); white-space: nowrap; }
 .xls .grid div:nth-child(-n+3) { border-top: none; background: oklch(0.88 0.006 255); color: var(--muted); font-weight: 500; }
@@ -747,6 +754,8 @@ export function HomeClient() {
                     <div className="bubble">¿Ya pagó la cuenta del agua?</div>
                     <div className="bubble me">no me ha llegado el papel…</div>
                     <div className="bubble">lo tengo anotado en el cuaderno</div>
+                    <div className="bubble me">¿cuánto era?</div>
+                    <div className="bubble">espera que busco</div>
                   </div>
                 </div>
                 <div className="sp-item" data-rev="4">
@@ -758,6 +767,23 @@ export function HomeClient() {
                   <div className="chaos-card receipt">
                     <div className="hd">Recibo s/n</div>
                     <div className="lines">····· ··· ···<br />medidor: ?<br /><span className="big">total: $——</span></div>
+                  </div>
+                </div>
+                <div className="sp-item" data-rev="5">
+                  <div className="chaos-card cuaderno">
+                    <div className="hd">Cuaderno</div>
+                    <div className="lines2">
+                      R. Pérez → $12.480<br />
+                      <s>J. Soto → pagó?</s><br />
+                      M. López → debe 2<br />
+                      <s>L. Castro → ok</s><br />
+                      P. Núñez → ????
+                    </div>
+                  </div>
+                </div>
+                <div className="sp-item" data-rev="5">
+                  <div className="chaos-card nota2">
+                    <div className="scrawl3">URGENTE<br />asamblea<br />martes!!</div>
                   </div>
                 </div>
               </div>
