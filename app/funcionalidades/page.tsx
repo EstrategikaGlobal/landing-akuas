@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { FuncionalidadesClient } from './FuncionalidadesClient'
 
 export const metadata: Metadata = {
-  title: 'Funcionalidades — akuas',
+  title: 'Funcionalidades',
   description: 'Facturación por tramos, gestión de pagos, alertas automáticas de consumo, portal del socio, cortes de servicio, lecturas offline y multi-tenant. Cada módulo resuelve un problema real de los APRs chilenos.',
   alternates: { canonical: 'https://akuas.cl/funcionalidades' },
   openGraph: {

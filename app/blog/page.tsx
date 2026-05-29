@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { BlogClient } from './BlogClient'
 
 export const metadata: Metadata = {
-  title: 'Recursos para APRs — akuas',
+  title: 'Recursos para APRs',
   description: 'Calculadoras gratuitas, tests de diagnóstico y guías prácticas para comités de Agua Potable Rural de Chile. Todo sobre Ley 20.998, facturación por tramos y gestión de morosidad.',
   alternates: { canonical: 'https://akuas.cl/blog' },
   openGraph: {

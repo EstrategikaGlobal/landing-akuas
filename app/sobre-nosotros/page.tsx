@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { SobreNosotrosClient } from './SobreNosotrosClient'
 
 export const metadata: Metadata = {
-  title: 'Quiénes somos — akuas',
+  title: 'Quiénes somos',
   description: 'akuas nació de observar cómo gestionan su APR los comités de agua potable rural en Chile. Construido para que cada comité opere con la misma rigurosidad que una empresa, sin necesitar un contador.',
   alternates: { canonical: 'https://akuas.cl/sobre-nosotros' },
   openGraph: {

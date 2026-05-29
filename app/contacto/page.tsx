@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { ContactoClient } from './ContactoClient'
 
 export const metadata: Metadata = {
-  title: 'Solicitar demo — akuas',
+  title: 'Solicitar demo',
   description: 'Agenda una demo gratuita de akuas para tu APR. 30 minutos por videollamada, sin compromiso. También puedes escribirnos por WhatsApp o email.',
   alternates: { canonical: 'https://akuas.cl/contacto' },
   openGraph: {
