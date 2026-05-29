@@ -182,6 +182,7 @@ nav.top ul a.active::after { content: ""; position: absolute; left: 0; right: 0;
 .fcta .ripple:nth-child(3) { animation-delay: 4.5s; }
 .fcta .ripple:nth-child(4) { animation-delay: 6.75s; }
 @keyframes fctaripple { 0% { transform: scale(0.18); opacity: 0; } 8% { opacity: 0.5; } 100% { transform: scale(3.4); opacity: 0; } }
+.fcta .ripple-dot { position: absolute; width: 22px; height: 22px; border-radius: 50%; background: var(--ocre); box-shadow: 0 0 0 8px oklch(0.72 0.13 75 / 0.2), 0 0 40px 6px oklch(0.72 0.13 75 / 0.35); z-index: 1; }
 .fcta-inner { position: relative; z-index: 2; max-width: 720px; margin: 0 auto; }
 .fcta h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(34px, 4.6vw, 62px); line-height: 1.02; letter-spacing: -0.03em; margin: 0 0 18px; color: var(--paper); text-wrap: balance; }
 .fcta p { font-family: var(--serif); font-weight: 300; font-size: clamp(18px, 2vw, 24px); line-height: 1.35; color: oklch(0.95 0.018 92 / 0.9); margin: 0 0 36px; }
@@ -570,6 +571,7 @@ export function FuncionalidadesClient() {
         <div className="ripples" aria-hidden="true">
           <span className="ripple"></span><span className="ripple"></span>
           <span className="ripple"></span><span className="ripple"></span>
+          <span className="ripple-dot"></span>
         </div>
         <div className="container">
           <div className="fcta-inner">

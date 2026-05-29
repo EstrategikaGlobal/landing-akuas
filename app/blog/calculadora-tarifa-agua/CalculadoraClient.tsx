@@ -146,6 +146,7 @@ nav.top ul a.active::after { content: ""; position: absolute; left: 0; right: 0;
 .fcta .ripple:nth-child(2) { animation-delay: 3s; }
 .fcta .ripple:nth-child(3) { animation-delay: 6s; }
 @keyframes fctaripple { 0% { transform: scale(0.18); opacity: 0; } 8% { opacity: 0.5; } 100% { transform: scale(3.4); opacity: 0; } }
+.fcta .ripple-dot { position: absolute; width: 22px; height: 22px; border-radius: 50%; background: var(--ocre); box-shadow: 0 0 0 8px oklch(0.72 0.13 75 / 0.2), 0 0 40px 6px oklch(0.72 0.13 75 / 0.35); z-index: 1; }
 .fcta-inner { position: relative; z-index: 2; max-width: 720px; margin: 0 auto; }
 .fcta h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(30px, 4vw, 52px); line-height: 1.04; letter-spacing: -0.03em; margin: 0 0 18px; color: var(--paper); text-wrap: balance; }
 .fcta h2 em { color: var(--ocre); font-style: italic; font-weight: 400; }
@@ -470,6 +471,7 @@ export function CalculadoraClient() {
       <section className="fcta">
         <div className="ripples" aria-hidden="true">
           <span className="ripple"></span><span className="ripple"></span><span className="ripple"></span>
+          <span className="ripple-dot"></span>
         </div>
         <div className="container">
           <div className="fcta-inner">
