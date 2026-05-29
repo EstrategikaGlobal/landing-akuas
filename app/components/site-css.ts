@@ -82,7 +82,7 @@ html, body { margin: 0; padding: 0; background: var(--ink); font-family: var(--s
 
 /* ── Footer ── */
 footer.foot { background: var(--ink); color: var(--paper); padding: 72px 0 32px; }
-.foot-grid { display: grid; grid-template-columns: 2fr 1fr 1.5fr; gap: 48px; padding-bottom: 40px; border-bottom: 1px solid oklch(0.3 0.03 240); }
+.foot-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 48px; padding-bottom: 40px; border-bottom: 1px solid oklch(0.3 0.03 240); }
 .foot .brand-row { display: flex; align-items: center; gap: 11px; margin-bottom: 16px; }
 .foot .brand-row .mk { width: 34px; height: 34px; background: var(--aqua); border-radius: 8px; display: grid; place-items: center; }
 .foot .brand-row .mk svg { width: 100%; height: 100%; color: var(--paper); }

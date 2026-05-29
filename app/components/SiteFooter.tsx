@@ -30,14 +30,6 @@ export default function SiteFooter() {
               <li><a href="/contacto">Agendar demo</a></li>
             </ul>
           </div>
-          <div className="foot-col foot-contact">
-            <h4>Contacto</h4>
-            <ul>
-              <li><a href="https://wa.me/56942657280" target="_blank" rel="noopener"><svg className="ci" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Z" /></svg>+56 9 4265 7280</a></li>
-              <li><a href="mailto:estrategikaa@gmail.com"><svg className="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="m4 7 8 6 8-6" /></svg>estrategikaa@gmail.com</a></li>
-              <li><a href="https://www.instagram.com/akuas.cl" target="_blank" rel="noopener"><svg className="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none" /></svg>@akuas.cl</a></li>
-            </ul>
-          </div>
         </div>
         <div className="foot-legal">
           <div>© 2026 akuas</div>
