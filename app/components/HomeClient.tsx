@@ -955,7 +955,7 @@ export function HomeClient() {
                 <li><a href="#producto">La solución</a></li>
                 <li><a href="#diferencia">El antes y el después</a></li>
                 <li><a href="#faq">Preguntas frecuentes</a></li>
-                <li><a href="#demo">Agendar una demo</a></li>
+                <li><a href="/contacto">Agendar demo</a></li>
               </ul>
             </div>
           </div>
