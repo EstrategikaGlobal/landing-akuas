@@ -540,10 +540,10 @@ export function HomeClient() {
               <span className="wm">a<span className="k">k</span>uas</span>
             </a>
             <ul>
-              <li><a href="#producto">Producto</a></li>
-              <li><a href="#como">Cómo funciona</a></li>
-              <li><a href="#precio">Para tu comité</a></li>
-              <li><a href="#nosotras">Nosotras</a></li>
+              <li><a href="/funcionalidades">Funcionalidades</a></li>
+              <li><a href="/sobre-nosotros">Quiénes somos</a></li>
+              <li><a href="/blog">Recursos</a></li>
+              <li><a href="/contacto">Contacto</a></li>
             </ul>
             <div className="nav-actions">
               <a href="#contacto" className="btn ghost-light">Contacto</a>
