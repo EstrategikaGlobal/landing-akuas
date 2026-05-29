@@ -837,6 +837,14 @@ export function HomeClient() {
                     <div className="dash-row"><span className="nm">Pedro N.</span><span className="mn">$11.200</span><span className="st ok">pagada</span></div>
                   </div>
                 </div>
+                <div className="sp-item" data-rev="4">
+                  <div className="dash-kpis">
+                    <div className="dash-kpi"><div className="k">Cortes activos</div><div className="v">3</div><div className="d warn">pendientes</div></div>
+                    <div className="dash-kpi"><div className="k">Alertas consumo</div><div className="v">2</div><div className="d warn">posible fuga</div></div>
+                    <div className="dash-kpi"><div className="k">Gastos del mes</div><div className="v">$84<small>k</small></div><div className="d">electricidad</div></div>
+                    <div className="dash-kpi"><div className="k">Socios totales</div><div className="v">412</div><div className="d">+3 este mes</div></div>
+                  </div>
+                </div>
               </div>
             </div>
 
