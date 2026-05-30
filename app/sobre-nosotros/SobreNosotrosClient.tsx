@@ -124,7 +124,7 @@ nav.top ul a.active::after { content: ""; position: absolute; left: 0; right: 0;
 
 /* Footer */
 footer.foot { background: var(--ink); color: var(--paper); padding: 82px 0 36px; border-top: 1px solid oklch(0.3 0.03 240); }
-.foot-grid { display: grid; grid-template-columns: 2fr 1fr 1.5fr; gap: 48px; padding-bottom: 46px; border-bottom: 1px solid oklch(0.3 0.03 240); }
+.foot-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 48px; padding-bottom: 46px; border-bottom: 1px solid oklch(0.3 0.03 240); }
 .foot .brand-row { display: flex; align-items: center; gap: 11px; margin-bottom: 18px; }
 .foot .brand-row .mk { width: 36px; height: 36px; background: var(--aqua); border-radius: 9px; display: grid; place-items: center; }
 .foot .brand-row .mk svg { width: 100%; height: 100%; color: var(--paper); }
