@@ -553,7 +553,6 @@ export function HomeClient() {
               <li><a href="/contacto">Contacto</a></li>
             </ul>
             <div className="nav-actions">
-              <a href="#contacto" className="btn ghost-light">Contacto</a>
               <a href="#demo" className="btn primary">Agendar demo</a>
             </div>
           </div>
