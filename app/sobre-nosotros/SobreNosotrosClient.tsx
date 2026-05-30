@@ -167,6 +167,14 @@ footer.foot { background: var(--ink); color: var(--paper); padding: 82px 0 36px;
   .fcta .ripple { animation: none; opacity: 0.12; transform: scale(1); }
   .fcta .ripple:nth-child(3), .fcta .ripple:nth-child(4) { display: none; }
 }
+@media (max-width: 480px) {
+  .container { padding: 0 16px; }
+  nav.top .row { padding: 16px 16px; }
+  .qhero-copy { padding: 24px 0 56px; }
+  .manifesto { padding: 56px 0; }
+  .princ { padding: 56px 0 64px; }
+  .fcta { padding: 60px 0; }
+}
 `
 
 export function SobreNosotrosClient() {

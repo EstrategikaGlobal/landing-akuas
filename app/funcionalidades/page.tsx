@@ -13,6 +13,40 @@ export const metadata: Metadata = {
   },
 }
 
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://akuas.cl' },
+    { '@type': 'ListItem', position: 2, name: 'Funcionalidades', item: 'https://akuas.cl/funcionalidades' },
+  ],
+}
+
+const softwareFeatures = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'akuas',
+  applicationCategory: 'BusinessApplication',
+  operatingSystem: 'Web',
+  url: 'https://akuas.cl',
+  featureList: [
+    'Facturación mensual automática por tramos tarifarios',
+    'Gestión de pagos con saldo encadenado',
+    'Alertas automáticas de consumo anormal',
+    'Portal del socio optimizado para adultos mayores',
+    'Centro de cortes de servicio con carta PDF legal',
+    'Dashboard administrativo con detección de desajuste contable',
+    'Lecturas de medidor sin conexión a internet',
+    'Multi-tenant: cada APR con sus propios datos y colores',
+  ],
+}
+
 export default function FuncionalidadesPage() {
-  return <FuncionalidadesClient />
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareFeatures) }} />
+      <FuncionalidadesClient />
+    </>
+  )
 }

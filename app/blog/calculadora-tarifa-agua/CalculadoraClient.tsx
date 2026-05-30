@@ -190,6 +190,15 @@ footer.foot { background: var(--ink); color: var(--paper); padding: 82px 0 36px;
   .fcta .ripple { animation: none; opacity: 0.12; transform: scale(1); }
   .fcta .ripple:nth-child(3) { display: none; }
 }
+@media (max-width: 480px) {
+  .container { padding: 0 16px; }
+  nav.top .row { padding: 16px 16px; }
+  .chero-copy { padding: 18px 0 40px; }
+  .form { padding: 20px 16px 18px; }
+  .result { padding: 20px 16px 18px; }
+  .total-box .tv { font-size: 32px; }
+  .fcta { padding: 60px 0; }
+}
 
 /* Print boleta */
 .boleta-print { display: none; }

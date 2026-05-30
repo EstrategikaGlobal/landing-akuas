@@ -159,6 +159,15 @@ footer.foot { background: var(--ink); color: var(--paper); padding: 82px 0 36px;
   .fcta .ripple { animation: none; opacity: 0.12; transform: scale(1); }
   .fcta .ripple:nth-child(3), .fcta .ripple:nth-child(4) { display: none; }
 }
+@media (max-width: 480px) {
+  .container { padding: 0 16px; }
+  nav.top .row { padding: 16px 16px; }
+  .rhero-copy { padding: 14px 0 44px; }
+  .listing { padding: 36px 0 56px; }
+  .feat-body { padding: 22px 18px 20px; }
+  .feat-visual { min-height: 180px; }
+  .fcta { padding: 60px 0; }
+}
 `
 
 export function BlogClient() {

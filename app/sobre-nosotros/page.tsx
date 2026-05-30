@@ -13,6 +13,32 @@ export const metadata: Metadata = {
   },
 }
 
+const orgSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'akuas',
+  url: 'https://akuas.cl',
+  logo: 'https://akuas.cl/akuas-monograma-positivo.svg',
+  description: 'Empresa de tecnología especializada en software de gestión para Comités de Agua Potable Rural de Chile.',
+  contactPoint: { '@type': 'ContactPoint', telephone: '+56-9-4265-7280', contactType: 'customer support', availableLanguage: 'Spanish', areaServed: 'CL' },
+  sameAs: ['https://www.instagram.com/akuas.cl'],
+}
+
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://akuas.cl' },
+    { '@type': 'ListItem', position: 2, name: 'Quiénes somos', item: 'https://akuas.cl/sobre-nosotros' },
+  ],
+}
+
 export default function SobreNosotrosPage() {
-  return <SobreNosotrosClient />
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
+      <SobreNosotrosClient />
+    </>
+  )
 }

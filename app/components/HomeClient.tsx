@@ -380,6 +380,17 @@ section.problema { background: var(--paper-2); color: var(--ink); padding: 116px
   .prob-grid { grid-template-columns: 1fr; }
   .prob-foot { gap: 16px; }
 }
+@media (max-width: 480px) {
+  .container { padding: 0 16px; }
+  nav.top .row { padding: 16px 16px; }
+  .hero-inner { padding: 6px 16px 72px; }
+  .hero-controls { right: 16px; bottom: 14px; }
+  .dots button { width: 24px; }
+  .arrows button { width: 40px; height: 40px; }
+  section.cta-final { padding: 64px 0; }
+  .cta-buttons { flex-direction: column; }
+  .cta-buttons .btn { width: 100%; justify-content: center; }
+}
 `
 
 export function HomeClient() {
@@ -964,7 +975,6 @@ export function HomeClient() {
             <div className="links">
               <a href="#">Términos</a>
               <a href="#">Privacidad</a>
-              <a href="#contacto">Datos de socios</a>
             </div>
           </div>
         </div>

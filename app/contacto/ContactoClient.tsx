@@ -204,6 +204,18 @@ footer.foot { background: var(--ink); color: var(--paper); padding: 82px 0 36px;
   .fcta .ripple { animation: none; opacity: 0.12; transform: scale(1); }
   .fcta .ripple:nth-child(3), .fcta .ripple:nth-child(4) { display: none; }
 }
+@media (max-width: 480px) {
+  .container { padding: 0 16px; }
+  nav.top .row { padding: 16px 16px; }
+  .chero-copy { padding: 24px 0 52px; }
+  .cbody { padding: 44px 0 60px; }
+  .form-card { padding: 20px 16px 18px; }
+  .form-card .fc-note { padding-left: 0; }
+  .channels { gap: 10px; }
+  .chan { padding: 13px 14px; gap: 12px; }
+  .chan .ct .val { font-size: 16px; }
+  .fcta { padding: 60px 0; }
+}
 `
 
 const WA = '56942657280'

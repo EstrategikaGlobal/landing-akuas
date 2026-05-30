@@ -13,6 +13,31 @@ export const metadata: Metadata = {
   },
 }
 
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://akuas.cl' },
+    { '@type': 'ListItem', position: 2, name: 'Recursos', item: 'https://akuas.cl/blog' },
+  ],
+}
+
+const itemList = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Recursos para APRs',
+  url: 'https://akuas.cl/blog',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Calculadora de cobro mensual de agua', url: 'https://akuas.cl/blog/calculadora-tarifa-agua' },
+  ],
+}
+
 export default function BlogPage() {
-  return <BlogClient />
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemList) }} />
+      <BlogClient />
+    </>
+  )
 }
