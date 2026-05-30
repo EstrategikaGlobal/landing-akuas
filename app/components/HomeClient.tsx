@@ -908,6 +908,7 @@ export function HomeClient() {
           <span className="ripple"></span>
           <span className="ripple"></span>
           <span className="ripple"></span>
+          <span className="ripple-dot"></span>
         </div>
         <div className="container">
           <div className="cta-inner">
@@ -952,9 +953,9 @@ export function HomeClient() {
             <div className="foot-col">
               <h4>Explora</h4>
               <ul>
-                <li><a href="#producto">La solución</a></li>
-                <li><a href="#diferencia">El antes y el después</a></li>
-                <li><a href="#faq">Preguntas frecuentes</a></li>
+                <li><a href="/funcionalidades">Funcionalidades</a></li>
+                <li><a href="/sobre-nosotros">Quiénes somos</a></li>
+                <li><a href="/blog">Recursos</a></li>
                 <li><a href="/contacto">Agendar demo</a></li>
               </ul>
             </div>
