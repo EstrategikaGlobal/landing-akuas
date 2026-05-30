@@ -379,6 +379,11 @@ section.problema { background: var(--paper-2); color: var(--ink); padding: 116px
   .sec-head { grid-template-columns: 1fr; gap: 24px; margin-bottom: 48px; align-items: start; }
   .prob-grid { grid-template-columns: 1fr; }
   .prob-foot { gap: 16px; }
+  /* object-position por imagen en portrait mobile */
+  .slide:nth-child(1) img { object-position: center 30%; }
+  .slide:nth-child(2) img { object-position: center top; }
+  .slide:nth-child(3) img { object-position: center 20%; }
+  .slide:nth-child(4) img { object-position: center center; }
 }
 @media (max-width: 480px) {
   .container { padding: 0 16px; }
