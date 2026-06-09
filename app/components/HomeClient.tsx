@@ -599,6 +599,7 @@ export function HomeClient() {
               <li><a href="/contacto">Contacto</a></li>
             </ul>
             <div className="nav-actions">
+              <a href="/acceso" className="btn ghost-light">Acceder</a>
               <a href="#demo" className="btn primary">Agendar demo</a>
               <button className="burger" onClick={() => setMenuOpen(true)} aria-label="Abrir menú">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
@@ -624,6 +625,7 @@ export function HomeClient() {
               <a href="/sobre-nosotros" onClick={() => setMenuOpen(false)}>Quiénes somos</a>
               <a href="/blog" onClick={() => setMenuOpen(false)}>Recursos</a>
               <a href="/contacto" onClick={() => setMenuOpen(false)}>Contacto</a>
+              <a href="/acceso" onClick={() => setMenuOpen(false)} style={{ color: 'oklch(0.72 0.13 75)', fontWeight: 700 }}>Acceder a la plataforma →</a>
             </div>
             <div className="mob-cta">
               <a href="/contacto" onClick={() => setMenuOpen(false)}>Agendar demo →</a>
