@@ -60,6 +60,37 @@ nav.top ul a:hover { color: var(--paper); }
 .btn.primary:hover { background: oklch(0.78 0.13 75); }
 .btn.ghost-light { background: oklch(0.97 0.012 92 / 0.08); color: var(--paper); border-color: oklch(0.97 0.012 92 / 0.28); backdrop-filter: blur(4px); }
 .btn.ghost-light:hover { background: oklch(0.97 0.012 92 / 0.16); }
+.btn.line-light { background: oklch(0.97 0.012 92 / 0.06); color: var(--paper); border-color: oklch(0.97 0.012 92 / 0.30); backdrop-filter: blur(4px); }
+.btn.line-light:hover { background: oklch(0.97 0.012 92 / 0.14); }
+
+/* ===== ACCESS MODAL ===== */
+.access-overlay { position: fixed; inset: 0; z-index: 200; display: flex; align-items: center; justify-content: center; padding: 28px; background: oklch(0.14 0.02 240 / 0.62); backdrop-filter: blur(6px); opacity: 0; pointer-events: none; transition: opacity 0.28s ease; }
+.access-overlay.open { opacity: 1; pointer-events: auto; }
+.access-modal { position: relative; width: 100%; max-width: 580px; background: var(--paper); border: 1px solid var(--line); border-radius: 26px; padding: 40px 40px 34px; box-shadow: 0 40px 90px -30px oklch(0.14 0.03 240 / 0.55), 0 2px 0 oklch(0.97 0.012 92 / 0.7) inset; transform: translateY(14px) scale(0.985); transition: transform 0.32s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.28s ease; opacity: 0; }
+.access-overlay.open .access-modal { transform: translateY(0) scale(1); opacity: 1; }
+.access-close { position: absolute; top: 20px; right: 20px; width: 38px; height: 38px; border-radius: 999px; border: 1px solid var(--line); background: transparent; color: var(--ink-2); cursor: pointer; display: grid; place-items: center; transition: background 0.15s, color 0.15s, transform 0.15s; }
+.access-close:hover { background: var(--paper-2); color: var(--ink); transform: rotate(90deg); }
+.access-close svg { width: 17px; height: 17px; }
+.access-eyebrow { font-family: var(--mono); font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--aqua); font-weight: 500; margin: 0 0 12px; }
+.access-modal h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(26px, 4vw, 34px); line-height: 1.02; letter-spacing: -0.03em; color: var(--ink); margin: 0 0 8px; }
+.access-sub { font-size: 15.5px; color: var(--muted); margin: 0 0 28px; }
+.access-list { display: flex; flex-direction: column; gap: 12px; }
+.access-card { display: flex; align-items: center; gap: 18px; padding: 16px 18px; border: 1px solid var(--line); border-radius: 18px; background: var(--paper); text-decoration: none; color: inherit; cursor: pointer; transition: border-color 0.18s, background 0.18s, transform 0.18s, box-shadow 0.18s; }
+.access-card:hover { transform: translateY(-2px); border-color: var(--accent, var(--aqua)); background: var(--paper-2); box-shadow: 0 14px 30px -18px oklch(0.14 0.03 240 / 0.4); }
+.access-badge { flex: none; width: 54px; height: 54px; border-radius: 15px; display: grid; place-items: center; background: var(--badge-bg, oklch(0.42 0.10 205 / 0.12)); color: var(--accent, var(--aqua)); }
+.access-badge svg { width: 27px; height: 27px; }
+.access-text { flex: 1; min-width: 0; }
+.access-text .nm { display: block; font-family: var(--sans); font-weight: 700; font-size: 17px; color: var(--ink); line-height: 1.2; margin-bottom: 4px; letter-spacing: -0.01em; }
+.access-text .ds { display: block; font-size: 13.5px; color: var(--muted); line-height: 1.35; }
+.access-go { flex: none; display: inline-flex; align-items: center; gap: 6px; font-family: var(--sans); font-weight: 600; font-size: 14px; padding: 9px 16px; border-radius: 999px; white-space: nowrap; background: var(--accent, var(--aqua)); color: var(--paper); transition: gap 0.18s; }
+.access-go.ink { background: var(--ink); }
+.access-go.ocre { color: var(--ink); }
+.access-go svg { width: 14px; height: 14px; }
+.access-card:hover .access-go { gap: 10px; }
+.access-foot { margin-top: 26px; padding-top: 20px; border-top: 1px solid var(--line); font-size: 13.5px; color: var(--muted); display: flex; align-items: center; justify-content: center; gap: 6px; text-align: center; }
+.access-foot a { color: var(--aqua); font-weight: 600; text-decoration: none; }
+.access-foot a:hover { text-decoration: underline; }
+@media (max-width: 540px) { .access-modal { padding: 32px 22px 26px; border-radius: 22px; } .access-card { gap: 14px; padding: 14px; } .access-badge { width: 48px; height: 48px; } .access-go .lbl { display: none; } }
 .btn.lg { padding: 17px 30px; font-size: 17px; }
 .btn-arrow::after { content: "→"; margin-left: 4px; transition: transform 0.15s; }
 .btn:hover .btn-arrow::after { transform: translateX(3px); }
@@ -423,11 +454,18 @@ section.problema { background: var(--paper-2); color: var(--ink); padding: 116px
 
 export function HomeClient() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [accessOpen, setAccessOpen] = useState(false)
 
   useEffect(() => {
-    document.body.style.overflow = menuOpen ? 'hidden' : ''
+    document.body.style.overflow = (menuOpen || accessOpen) ? 'hidden' : ''
     return () => { document.body.style.overflow = '' }
-  }, [menuOpen])
+  }, [menuOpen, accessOpen])
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setAccessOpen(false) }
+    document.addEventListener('keydown', onKey)
+    return () => document.removeEventListener('keydown', onKey)
+  }, [])
 
   /* ── Carousel ─────────────────────────────────────────────────────────── */
   useEffect(() => {
@@ -599,7 +637,7 @@ export function HomeClient() {
               <li><a href="/contacto">Contacto</a></li>
             </ul>
             <div className="nav-actions">
-              <a href="/acceso" className="btn ghost-light">Acceder</a>
+              <button type="button" className="btn line-light" onClick={() => setAccessOpen(true)}>Acceder</button>
               <a href="#demo" className="btn primary">Agendar demo</a>
               <button className="burger" onClick={() => setMenuOpen(true)} aria-label="Abrir menú">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
@@ -625,7 +663,10 @@ export function HomeClient() {
               <a href="/sobre-nosotros" onClick={() => setMenuOpen(false)}>Quiénes somos</a>
               <a href="/blog" onClick={() => setMenuOpen(false)}>Recursos</a>
               <a href="/contacto" onClick={() => setMenuOpen(false)}>Contacto</a>
-              <a href="/acceso" onClick={() => setMenuOpen(false)} style={{ color: 'oklch(0.72 0.13 75)', fontWeight: 700 }}>Acceder a la plataforma →</a>
+              <button type="button" onClick={() => { setMenuOpen(false); setAccessOpen(true) }}
+                style={{ background: 'none', border: 'none', padding: 0, color: 'oklch(0.72 0.13 75)', fontWeight: 700, fontSize: 'inherit', cursor: 'pointer', textAlign: 'left' }}>
+                Acceder a la plataforma →
+              </button>
             </div>
             <div className="mob-cta">
               <a href="/contacto" onClick={() => setMenuOpen(false)}>Agendar demo →</a>
@@ -1043,6 +1084,79 @@ export function HomeClient() {
           </div>
         </div>
       </footer>
+
+      {/* ===== ACCESS MODAL ===== */}
+      <div className={`access-overlay${accessOpen ? ' open' : ''}`}
+        role="dialog" aria-modal="true" aria-labelledby="accessTitle"
+        onClick={e => { if (e.target === e.currentTarget) setAccessOpen(false) }}>
+        <div className="access-modal">
+          <button type="button" className="access-close" onClick={() => setAccessOpen(false)} aria-label="Cerrar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
+              <path d="M6 6l12 12M18 6L6 18"/>
+            </svg>
+          </button>
+
+          <p className="access-eyebrow">Acceso a la plataforma</p>
+          <h2 id="accessTitle">¿Cómo deseas ingresar?</h2>
+          <p className="access-sub">Selecciona tu perfil de acceso.</p>
+
+          <div className="access-list">
+            {/* Directiva APR */}
+            <a href="https://app.akuas.cl/admin" className="access-card"
+              style={{'--accent': 'var(--aqua)', '--badge-bg': 'oklch(0.42 0.10 205 / 0.12)'} as React.CSSProperties}>
+              <span className="access-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="4" y="3" width="16" height="18" rx="1.2"/>
+                  <path d="M8 7h2M14 7h2M8 11h2M14 11h2"/><path d="M10 21v-4h4v4"/>
+                </svg>
+              </span>
+              <span className="access-text">
+                <span className="nm">Directiva APR</span>
+                <span className="ds">Directivos, operadores y trabajadores del comité</span>
+              </span>
+              <span className="access-go"><span className="lbl">Ingresar</span></span>
+            </a>
+
+            {/* Socios y Usuarios */}
+            <a href="https://app.akuas.cl/socios" className="access-card"
+              style={{'--accent': 'var(--ocre)', '--badge-bg': 'oklch(0.72 0.13 75 / 0.16)'} as React.CSSProperties}>
+              <span className="access-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M12 3c3.6 4.6 6 7.6 6 11a6 6 0 0 1-12 0c0-3.4 2.4-6.4 6-11z"/>
+                </svg>
+              </span>
+              <span className="access-text">
+                <span className="nm">Socios y Usuarios</span>
+                <span className="ds">Consulta tus boletas, pagos y consumo de agua</span>
+              </span>
+              <span className="access-go ocre"><span className="lbl">Ingresar</span></span>
+            </a>
+
+            {/* Equipo AKUAS */}
+            <a href="https://app.akuas.cl/akuas" className="access-card"
+              style={{'--accent': 'var(--ink)', '--badge-bg': 'oklch(0.32 0.025 240 / 0.10)'} as React.CSSProperties}>
+              <span className="access-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="3"/>
+                  <path d="M12 2.5l1.4 2.3 2.6-.6.4 2.7 2.5 1-.9 2.5 1.7 2.1-2.1 1.7.9 2.5-2.5 1-.4 2.7-2.6-.6L12 21.5l-1.4-2.3-2.6.6-.4-2.7-2.5-1 .9-2.5L2.2 11.6l2.1-1.7-.9-2.5 2.5-1 .4-2.7 2.6.6z"/>
+                </svg>
+              </span>
+              <span className="access-text">
+                <span className="nm">Equipo AKUAS</span>
+                <span className="ds">Acceso interno para el equipo de gestión</span>
+              </span>
+              <span className="access-go ink">
+                <span className="lbl">Acceder</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M5 12h13M13 6l6 6-6 6"/>
+                </svg>
+              </span>
+            </a>
+          </div>
+
+          <p className="access-foot">¿Tu comité aún no usa akuas? <a href="#demo" onClick={() => setAccessOpen(false)}>Agenda una demo</a></p>
+        </div>
+      </div>
     </>
   )
 }
